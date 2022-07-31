@@ -42,9 +42,10 @@ if %Silent% NEQ 1 (
 echo.
 echo Copy main.py and icon.ico...
 )
-copy /Y oof.py ".\compile\oof.py">nul
-copy /Y icon.ico ".\compile\icon.ico">nul
-copy /Y oof.ogg ".\compile\oof.ogg">nul
+copy /Y oof.py ".\compile\">nul
+copy /Y icon.ico ".\compile\">nul
+copy /Y oof.ogg ".\compile\">nul
+copy /Y icon.png ".\compile\">nul
 cd compile
 
 if %Silent% NEQ 1 (
@@ -77,8 +78,6 @@ echo Copy compiled files to /compile, now that it's empty...
 )
 xcopy ".\dist\oof\*" ".\" /E>nul
 rd /S /Q dist
-
-copy ..\icon.png .\ >nul
 
 :e
 if %Silent% NEQ 1 (
